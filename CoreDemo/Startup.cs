@@ -52,6 +52,12 @@ namespace CoreDemo
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.Run(context =>
+            {
+                context.Response.StatusCode = 404;
+                return Task.FromResult(0);
+            });
         }
+        
     }
 }
